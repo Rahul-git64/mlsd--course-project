@@ -24,6 +24,11 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
+          pip install dvc
+
+      - name: Pull Dataset from DVC Remote
+        run: |
+          dvc pull
 
       - name: Run Training Pipeline
         run: |
